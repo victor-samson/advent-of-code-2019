@@ -12,12 +12,12 @@ namespace advent_of_code.Puzzles
         public D1P1()
         {
             _masses = new List<decimal>();
+            ReadPuzzleInputFromFile();
             CalculateAnswer();
         }
 
         public void CalculateAnswer()
         {
-            ReadPuzzleInputFromFile();
             var result = 0;
             foreach (var mass in _masses)
             {
@@ -29,7 +29,6 @@ namespace advent_of_code.Puzzles
         public void ReadPuzzleInputFromFile()
         {
             string line;
-
             using (var file = new StreamReader(@"c:\victor\advent-of-code-2019\advent-of-code\Inputs\D1P1.txt"))
             {
                 while ((line = file.ReadLine()) != null)
